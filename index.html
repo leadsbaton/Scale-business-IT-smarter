@@ -62,35 +62,42 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-gradient py-16 lg:py-24 mt-9">
+    <section class="bg-[#E6F5FF] py-16 lg:py-24 mt-9">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="space-y-8">
-                    <div class="space-y-6">
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                            Uncomplicate IT:<br>
-                            Scale smarter, not harder,<br>
-                            with the Lean EX guide<br>
-                            for small business IT
-                        </h1>
-                    </div>
-                    <button id="heroDownloadBtn" onclick="openModal()"
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md transform hover:scale-105">
-                        Download Now
-                    </button>
+
+                <!-- Left Content: Text -->
+                <div class="order-1 lg:order-1 space-y-8 text-center lg:text-left">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        Uncomplicate IT:<br>
+                        Scale smarter, not harder,<br>
+                        with the Lean EX guide<br>
+                        for small business IT
+                    </h1>
                 </div>
 
-                <!-- Right Image -->
-                <div class="flex justify-center lg:justify-end">
-                    <div class="relative max-w-md lg:max-w-lg">
+                <!-- Right Content: Image -->
+                <div class="order-2 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative max-w-md lg:max-w-lg w-full">
                         <img src="assets/img/scale_business_it_image.png" alt="Scale business IT smarter report cover"
                             class="w-full h-auto rounded-lg">
                     </div>
                 </div>
+
+                <!-- Download Button: only mobile goes last -->
+                <div class="order-3 lg:order-2 flex justify-center lg:justify-start">
+                    <button id="heroDownloadBtn" onclick="openModal()"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md w-full sm:w-auto">
+                        Download Now
+                    </button>
+                </div>
+
             </div>
         </div>
     </section>
+
+
+
 
     <!-- Content Section -->
     <section class="py-16 lg:py-24 bg-white">
@@ -295,9 +302,9 @@
                     </div>
 
                     <div>
-                        <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Phone number<span
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone number<span
                                 class="text-red-500">*</span></label>
-                        <input type="tel" id="phoneNumber" name="phoneNumber" required
+                        <input type="tel" id="phone" name="phone" required
                             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
                     </div>
 
@@ -436,13 +443,13 @@
                     const company = document.getElementById("companyName").value.trim();
                     const jobTitle = document.getElementById("jobTitle").value.trim();
                     const companyEmail = document.getElementById("companyEmail").value.trim(); // Changed from 'email'
-                    const phoneNumber = document.getElementById("phoneNumber").value.trim(); // Changed from 'phone'
+                    const phone = document.getElementById("phone").value.trim(); // Changed from 'phone'
 
                     // Validation
                     const isValidEmail = /\S+@\S+\.\S+/.test(companyEmail);
-                    const isValidPhone = /^[0-9]{10,11}$/.test(phoneNumber);
+                    const isValidPhone = /^[0-9]{10,11}$/.test(phone);
 
-                    if (!firstName || !lastName || !company || !jobTitle || !companyEmail || !phoneNumber) {
+                    if (!firstName || !lastName || !company || !jobTitle || !companyEmail || !phone) {
                         showDialog("Please fill in all required fields.", false);
                         return;
                     }
@@ -465,7 +472,7 @@
                         `Company: ${company}\n` +
                         `Job Title: ${jobTitle}\n` +
                         `Email: ${companyEmail}\n` +
-                        `Phone: ${phoneNumber}\n\n` +
+                        `Phone: ${phone}\n\n` +
                         `Click OK to proceed.`;
 
                     const confirmed = await customConfirm(confirmationMessage);
@@ -607,11 +614,11 @@
                     e.preventDefault();
 
                     const fullName = document.getElementById("fullName").value.trim();
-                    const phoneNumber = document.getElementById("phoneNumber").value.trim();
+                    const phone = document.getElementById("phone").value.trim();
 
-                    const isValidPhone = /^[0-9]{10,11}$/.test(phoneNumber);
+                    const isValidPhone = /^[0-9]{10,11}$/.test(phone);
 
-                    if (!fullName || !phoneNumber) {
+                    if (!fullName || !phone) {
                         showDialog("Please fill in all required fields.", false);
                         return;
                     }
@@ -626,7 +633,7 @@
                         return;
                     }
 
-                    const confirmationMessage = `Please confirm your details:\n\nFull Name: ${fullName}\nPhone: ${phoneNumber}`;
+                    const confirmationMessage = `Please confirm your details:\n\nFull Name: ${fullName}\nPhone: ${phone}`;
 
                     const confirmed = await customConfirm(confirmationMessage);
                     if (!confirmed) return;
