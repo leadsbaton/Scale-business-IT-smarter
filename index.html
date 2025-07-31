@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Business IT Smarter - Tech Report</title>
+    <meta name="description" content="A detailed analysis of the impact of AI and key customer service metrics">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <style>
+        /* Custom styles for modal backdrop */
+        .modal-backdrop {
+            backdrop-filter: blur(4px);
+        }
+
+        /* Hide modal by default */
+        .modal {
+            display: none;
+        }
+
+        /* Show modal when active */
+        .modal.active {
+            display: flex;
+        }
+
+        /* Custom gradient for hero section */
+        .hero-gradient {
+            background: linear-gradient(135deg, #eff6ff 0%, #f3e8ff 100%);
+        }
+
+        /* Custom styles for the circular stats borders */
+        .stat-circle-border {
+            border: 4px solid #3b82f6; /* Tailwind blue-600 */
+        }
+
+        /* Custom styles for the recognition section elements */
+        .recognition-top100 {
+            background-color: #dc2626; /* Tailwind red-600 */
+        }
+        .recognition-k-circle {
+            background-color: #3b82f6; /* Tailwind blue-600 */
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            Scale<br>
+                            business IT<br>
+                            smarter
+                        </h1>
+                        <p class="text-xl lg:text-2xl text-gray-700 font-medium">
+                            Future-Proof IT: 5 Pillars for Smarter, Faster Operations
+                        </p>
+                    </div>
+                    <button id="heroDownloadBtn" onclick="openModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md transform hover:scale-105">
+                        Download Now
+                    </button>
+                </div>
+
+                <!-- Right Image -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative max-w-md lg:max-w-lg">
+                        <img src="assets/img/freshwork_screenshot.png" alt="Scale business IT smarter report cover" class="w-full h-auto rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Image -->
+                <div class="flex justify-center lg:justify-start order-2 lg:order-1">
+                    <div class="relative max-w-md lg:max-w-lg">
+                        <img src="assets/img/image.png" alt="Person with IT automation illustration" class="w-full h-auto rounded-lg shadow-xl">
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="space-y-6 order-1 lg:order-2">
+                    <div class="space-y-4">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                            "Future-Proof IT: 5 Pillars for Smarter, Faster Operations"
+                        </h2>
+                        <p class="text-xl text-gray-700 font-semibold">Simplify. Automate. Scale with confidence.</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            This report reveals a strategic framework to modernize IT—built to simplify complexity, drive efficiency, and power scalable growth. Discover how to make IT a smarter engine for business success.
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="space-y-2">
+                            <p class="font-semibold text-gray-900">
+                                <span class="text-blue-600 font-bold">1.</span> How to Simplify IT Without Losing Control:
+                            </p>
+                            <p class="text-gray-600 ml-4">
+                                Understand how intuitive setups and smarter tools reduce complexity and make IT easier to manage.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="font-semibold text-gray-900">
+                                <span class="text-blue-600 font-bold">2.</span> How Automation Boosts Efficiency and Cuts Costs:
+                            </p>
+                            <p class="text-gray-600 ml-4">
+                                Learn how automating repetitive processes can speed up workflows, save resources, and minimize human error.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="font-semibold text-gray-900">
+                                <span class="text-blue-600 font-bold">3.</span> How to Scale IT with AI and Smart Infrastructure:
+                            </p>
+                            <p class="text-gray-600 ml-4">
+                                Discover how AI and scalable architectures empower IT teams to grow faster, make better decisions, and stay competitive.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-12">
+                <div class="space-y-6">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Did you know?</h2>
+                    <p class="text-xl text-gray-700 max-w-4xl mx-auto">
+                        The biggest outcomes seen with AI and IT modernization, based on real-world use cases:
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                    <div class="text-center space-y-4">
+                        <div class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
+                            <span class="text-3xl font-bold text-blue-600">25%</span>
+                        </div>
+                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
+                            Improved resolution time at Village Roadshow after adopting Freshservice
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
+                            <span class="text-3xl font-bold text-blue-600">60%</span>
+                        </div>
+                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
+                            Reduction in annual IT costs achieved through automation and smarter tools
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
+                            <span class="text-3xl font-bold text-blue-600">36%</span>
+                        </div>
+                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
+                            Of organizations have already adopted generative AI in IT — the highest across all business functions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Recognition Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-8">
+                <h3 class="text-2xl font-bold text-gray-900">Recommended by leading industry experts</h3>
+                <div class="flex justify-center items-center gap-8 lg:gap-16 flex-wrap">
+                    <!-- Using image assets as per your previous request -->
+                    <img src="assets/img/gartner.webp" alt="Gartner" class="h-12 w-auto object-contain">
+                    <img src="assets/img/G2-Best-software-award-2023.webp" alt="Top 100 Software Products" class="h-12 w-auto object-contain">
+                    <img src="assets/img/Forrester-Accolade-220x240.webp" alt="Forrester" class="h-12 w-auto object-contain">
+                    <img src="assets/img/TopRated.webp" alt="Top Rated 2021" class="h-12 w-auto object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                    Ready to discover the keys to transforming your IT operations for maximum impact?
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Village Roadshow used Freshservice to scale its IT operations efficiently, achieving a 25% improvement in resolution time while saving on 50% of annual IT costs. Freshservice demonstrably scaled to manage over 2,000 IT tickets monthly, a significant improvement over the previous system, showcasing its ability to handle growing support needs.
+                </p>
+                <button id="bottomDownloadBtn" onclick="openModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md transform hover:scale-105">
+                    Download Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2">
+                <p class="text-gray-300">Privacy Policy</p>
+                <p class="text-gray-400">© 2025 Tech IQ Papers, All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div id="downloadModal" class="modal fixed inset-0 bg-black bg-opacity-50 modal-backdrop z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Download the report</h2>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl font-bold">×</button>
+                </div>
+
+                <form id="downloadForm" class="space-y-4">
+                    <div class="space-y-2">
+                        <label for="firstName" class="block text-sm font-medium text-gray-700">
+                            First name<span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="lastName" class="block text-sm font-medium text-gray-700">
+                            Last name<span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="companyName" class="block text-sm font-medium text-gray-700">
+                            Company Name<span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Company Name" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="jobTitle" class="block text-sm font-medium text-gray-700">
+                            Job Title<span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="companyEmail" class="block text-sm font-medium text-gray-700">
+                            Company Email Address<span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" id="companyEmail" name="companyEmail" placeholder="Company Email Address" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="phoneNumber" class="block text-sm font-medium text-gray-700">
+                            Phone Number<span class="text-red-500">*</span>
+                        </label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+
+                    <!-- Disclaimer Checkbox -->
+                    <div class="flex items-start mt-4">
+                        <input type="checkbox" id="privacyConsent" name="privacyConsent" class="mt-1 mr-2 leading-tight h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded" required>
+                        <label for="privacyConsent" class="text-xs text-gray-500 leading-relaxed">
+                            By clicking "Download Now", I understand that Freshworks will process my personal information in accordance with its
+                            <a href="https://www.freshworks.com/privacy/" class="text-purple-600 underline cursor-pointer hover:text-purple-700">Privacy Notice</a> and consent to receiving marketing communications
+                            related to Freshworks' business, services, and events. I can unsubscribe from these communications at any time.
+                        </label>
+                    </div>
+
+                    <!-- Hidden timestamp field -->
+                    <input type="hidden" name="timestamp" id="timestamp" />
+
+                    <button type="submit" id="submitBtn" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md">
+                        Download Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      
+        const EMAIL_SERVICE_ID = "service_6usakhn";
+        const EMAIL_TEMPLATE_ID = "template_j1kchdo";
+        const EMAIL_PUBLIC_KEY = "bVJGqgbuDB6REerGp"; // Replace with actual public key
+
+        // PDF Download Link
+        const PDF_DOWNLOAD_URL = "https://leadsbaton.github.io/Scale-business-IT-smarter/assets/pdf/Scaling_Smarter_Playbook_FINAL.pdf";
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOMContentLoaded fired. Script is running.");
+
+            // Initialize EmailJS
+            emailjs.init(EMAIL_PUBLIC_KEY);
+            console.log("EmailJS initialized with public key:", EMAIL_PUBLIC_KEY);
+
+            // Get elements
+            const downloadModal = document.getElementById('downloadModal');
+            const downloadForm = document.getElementById('downloadForm');
+            const timestampInput = document.getElementById('timestamp');
+            const submitBtn = document.getElementById('submitBtn');
+            const privacyConsentCheckbox = document.getElementById('privacyConsent');
+
+            // Log elements to confirm they are found
+            console.log("Elements found:");
+            console.log("downloadModal:", downloadModal);
+            console.log("downloadForm:", downloadForm);
+            console.log("submitBtn:", submitBtn);
+            console.log("privacyConsentCheckbox:", privacyConsentCheckbox);
+
+            /**
+             * Shows a temporary message dialog.
+             * @param {string} message - The message to display.
+             * @param {boolean} isSuccess - True for a success message (green), false for an error (red).
+             */
+            const showDialog = (message, isSuccess = true) => {
+                const dialog = document.createElement("div");
+                dialog.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300 transform translate-x-full opacity-0 ${isSuccess ? 'bg-green-600 text-white' : 'bg-red-600 text-white'}`;
+                dialog.innerText = message;
+                document.body.appendChild(dialog);
+
+                setTimeout(() => {
+                    dialog.classList.remove('translate-x-full', 'opacity-0');
+                    dialog.classList.add('translate-x-0', 'opacity-100');
+                }, 10);
+
+                setTimeout(() => {
+                    dialog.classList.remove('translate-x-0', 'opacity-100');
+                    dialog.classList.add('translate-x-full', 'opacity-0');
+                    setTimeout(() => dialog.remove(), 300);
+                }, 3000);
+            };
+
+            /**
+             * Custom confirmation dialog (replaces window.confirm).
+             * @param {string} message - The confirmation message.
+             * @returns {Promise<boolean>} - Resolves true if OK, false if Cancel.
+             */
+            const customConfirm = (message) => {
+                return new Promise(resolve => {
+                    const confirmationDialog = document.createElement("div");
+                    confirmationDialog.className = "fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4 z-[9999]";
+                    confirmationDialog.innerHTML = `
+                        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md relative">
+                            <h4 class="text-lg font-bold mb-4">Confirm Details</h4>
+                            <p class="mb-4">${message}</p>
+                            <div class="flex justify-end space-x-4">
+                                <button id="cancelConfirm" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-300">Cancel</button>
+                                <button id="okConfirm" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">OK</button>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(confirmationDialog);
+
+                    document.getElementById('okConfirm').addEventListener('click', () => {
+                        confirmationDialog.remove();
+                        resolve(true);
+                    });
+                    document.getElementById('cancelConfirm').addEventListener('click', () => {
+                        confirmationDialog.remove();
+                        resolve(false);
+                    });
+                });
+            };
+
+            // Event listener for closing modal by clicking outside
+            if (downloadModal) {
+                downloadModal.addEventListener('click', function(event) {
+                    if (event.target === this) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // Event listener for closing modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+
+            // Form Submission Handler
+            if (downloadForm) {
+                downloadForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    console.log("Form submitted.");
+
+                    // Get input values
+                    const firstName = document.getElementById("firstName").value.trim();
+                    const lastName = document.getElementById("lastName").value.trim();
+                    const company = document.getElementById("companyName").value.trim();
+                    const jobTitle = document.getElementById("jobTitle").value.trim();
+                    const companyEmail = document.getElementById("companyEmail").value.trim(); // Changed from 'email'
+                    const phoneNumber = document.getElementById("phoneNumber").value.trim(); // Changed from 'phone'
+
+                    // Validation
+                    const isValidEmail = /\S+@\S+\.\S+/.test(companyEmail);
+                    const isValidPhone = /^[0-9]{10,11}$/.test(phoneNumber);
+
+                    if (!firstName || !lastName || !company || !jobTitle || !companyEmail || !phoneNumber) {
+                        showDialog("Please fill in all required fields.", false);
+                        return;
+                    }
+                    if (!isValidEmail) {
+                        showDialog("Invalid email address format.", false);
+                        return;
+                    }
+                    if (!isValidPhone) {
+                        showDialog("Phone number must be 10 or 11 digits.", false);
+                        return;
+                    }
+                    if (!privacyConsentCheckbox.checked) {
+                        showDialog("Please agree to the privacy notice to download the report.", false);
+                        return;
+                    }
+
+                    const confirmationMessage = `Please confirm your details:\n\n` +
+                                                `First Name: ${firstName}\n` +
+                                                `Last Name: ${lastName}\n` +
+                                                `Company: ${company}\n` +
+                                                `Job Title: ${jobTitle}\n` +
+                                                `Email: ${companyEmail}\n` +
+                                                `Phone: ${phoneNumber}\n\n` +
+                                                `Click OK to proceed.`;
+
+                    const confirmed = await customConfirm(confirmationMessage);
+                    if (!confirmed) {
+                        console.log("User cancelled confirmation.");
+                        return;
+                    }
+
+                    // Set timestamp
+                    const now = new Date();
+                    timestampInput.value = now.toLocaleString();
+                    console.log("Timestamp set:", timestampInput.value);
+
+                    // Show loading state
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        const originalText = submitBtn.innerHTML;
+                        submitBtn.innerHTML = `<svg class="animate-spin h-5 w-5 text-white inline mr-2" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>Sending...`;
+
+                        try {
+                            // Send email via EmailJS
+                            console.log("Attempting to send email via EmailJS...");
+                            await emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, this); // 'this' refers to the form element
+                            showDialog("Message sent successfully! Your download will begin shortly.");
+                            console.log("Email sent successfully.");
+
+                            // Reset form and close modal
+                            downloadForm.reset();
+                            privacyConsentCheckbox.checked = false;
+                            closeModal();
+                            console.log("Form reset and modal closed.");
+
+                            // Trigger PDF download
+                            const link = document.createElement("a");
+                            link.href = PDF_DOWNLOAD_URL;
+                            link.download = "Future_Proof_IT_5_Pillars.pdf";
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            console.log("PDF download triggered.");
+
+                        } catch (error) {
+                            console.error("EmailJS Error:", error);
+                            showDialog("Failed to send message. Please try again.", false);
+                        } finally {
+                            // Restore button state
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalText;
+                        }
+                    }
+                });
+            } else {
+                console.warn("Download form (downloadForm) not found.");
+            }
+        });
+
+        // Global functions for onclick attributes
+        function openModal() {
+            const downloadModal = document.getElementById('downloadModal');
+            if (downloadModal) {
+                downloadModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                console.log("Modal opened.");
+            } else {
+                console.error("downloadModal element not found in openModal function.");
+            }
+        }
+
+        function closeModal() {
+            const downloadModal = document.getElementById('downloadModal');
+            if (downloadModal) {
+                downloadModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore background scrolling
+                console.log("Modal closed.");
+            } else {
+                console.error("downloadModal element not found in closeModal function.");
+            }
+        }
+    </script>
+</body>
+
+</html>
