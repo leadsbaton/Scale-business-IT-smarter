@@ -2,237 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scale Business IT Smarter - Tech Report</title>
-    <meta name="description" content="A detailed analysis of the impact of AI and key customer service metrics">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scale Business IT Smarter - Tech Report</title>
+  <meta name="description" content="A detailed analysis of the impact of AI and key customer service metrics">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for 'Inter' -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- EmailJS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for 'Inter' -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- EmailJS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <style>
-        /* Custom styles for modal backdrop */
-        .modal-backdrop {
-            backdrop-filter: blur(4px);
-        }
+  <style>
+    /* Custom styles for modal backdrop */
+    .modal-backdrop {
+      backdrop-filter: blur(4px);
+    }
 
-        /* Hide modal by default */
-        .modal {
-            display: none;
-        }
+    /* Hide modal by default */
+    .modal {
+      display: none;
+    }
 
-        /* Show modal when active */
-        .modal.active {
-            display: flex;
-        }
+    /* Show modal when active */
+    .modal.active {
+      display: flex;
+    }
 
-        /* Custom gradient for hero section */
-        .hero-gradient {
-            background: linear-gradient(135deg, #eff6ff 0%, #f3e8ff 100%);
-        }
+    /* Custom gradient for hero section */
+    .hero-gradient {
+      background: linear-gradient(135deg, #eff6ff 0%, #f3e8ff 100%);
+    }
 
-        /* Custom styles for the circular stats borders */
-        .stat-circle-border {
-            border: 4px solid #3b82f6;
-            /* Tailwind blue-600 */
-        }
+    /* Custom styles for the circular stats borders */
+    .stat-circle-border {
+      border: 4px solid #3b82f6;
+      /* Tailwind blue-600 */
+    }
 
-        /* Custom styles for the recognition section elements */
-        .recognition-top100 {
-            background-color: #dc2626;
-            /* Tailwind red-600 */
-        }
+    /* Custom styles for the recognition section elements */
+    .recognition-top100 {
+      background-color: #dc2626;
+      /* Tailwind red-600 */
+    }
 
-        .recognition-k-circle {
-            background-color: #3b82f6;
-            /* Tailwind blue-600 */
-        }
-    </style>
+    .recognition-k-circle {
+      background-color: #3b82f6;
+      /* Tailwind blue-600 */
+    }
+  </style>
 </head>
 
 <body class="font-sans antialiased">
 
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white flex justify-between items-center p-6">
-        <img src="assets/img/headerLogoLight.webp" alt="Header Logo" class="h-10">
-    </header>
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white flex justify-between items-center p-6">
+    <img src="assets/img/headerLogoLight.webp" alt="Header Logo" class="h-10">
+  </header>
 
-    <!-- Hero Section -->
-    <section class="bg-[#E6F5FF] py-16 lg:py-24 mt-9">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <!-- Hero Section -->
+  <section class="bg-[#E6F5FF] py-16 lg:py-24 mt-9">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-                <!-- Left Content: Text -->
-                <div class="order-1 lg:order-1 space-y-8 text-center lg:text-left">
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                        Uncomplicate IT:<br>
-                        Scale smarter, not harder,<br>
-                        with the Lean EX guide<br>
-                        for small business IT
-                    </h1>
-                </div>
-
-                <!-- Right Content: Image -->
-                <div class="order-2 lg:order-2 flex justify-center lg:justify-end">
-                    <div class="relative max-w-md lg:max-w-lg w-full">
-                        <img src="assets/img/scale_business_it_image.png" alt="Scale business IT smarter report cover"
-                            class="w-full h-auto rounded-lg">
-                    </div>
-                </div>
-
-                <!-- Download Button: only mobile goes last -->
-                <div class="order-3 lg:order-2 flex justify-center lg:justify-start">
-                    <button id="heroDownloadBtn" onclick="openModal()"
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md w-full sm:w-auto">
-                        Download Now
-                    </button>
-                </div>
-
-            </div>
+        <!-- Left Content: Text -->
+        <div class="order-1 lg:order-1 space-y-8 text-center lg:text-left">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            Uncomplicate IT:<br>
+            Scale smarter, not harder,<br>
+            with the Lean EX guide<br>
+            for small business IT
+          </h1>
         </div>
-    </section>
 
-
-
-
-    <!-- Content Section -->
-    <section class="py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Image -->
-                <div class="flex justify-center lg:justify-start order-2 lg:order-1">
-                    <div class="relative max-w-md lg:max-w-lg">
-                        <img src="assets/img/image_whats_inside.png" alt="Person with IT automation illustration"
-                            class="w-full h-auto rounded-lg">
-                    </div>
-                </div>
-
-                <!-- Right Content -->
-                <div class="space-y-6 order-1 lg:order-2">
-                    <div class="space-y-4">
-                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
-                            Learn 5 proven ways SMBs deliver top-tier employee experiences on a lean budget.
-                        </h2>
-                        <p class="text-gray-600 leading-relaxed">
-                            Small and medium businesses face immense pressure to deliver seamless, consumer-like
-                            workplace experiences
-                            while grappling with everyday complexities: limited IT budgets, fragmented tools, and manual
-                            processes that
-                            hinder scalability. This can make sustainable growth feel like an uphill battle. But what if
-                            you could
-                            transform your IT operations from a cost center into a strategic engine for growth, all
-                            while enhancing
-                            employee satisfaction and optimizing costs?
-                        </p>
-                        <p class="text-gray-900 font-semibold">In this guide, you will discover how to:</p>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">1.</span> Simplify IT operations
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                Discover how intuitive, user-friendly IT platforms reduce complexity, increase adoption,
-                                and boost team productivity from day one.
-                            </p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">2.</span> Automate to move faster
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                See how no-code automation and AI-powered tools eliminate repetitive tasks, speed up
-                                resolution times, and allow your IT team to focus on strategic work.
-                            </p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">3.</span> Optimize spend and resources
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                Learn to evaluate IT solutions with flexible pricing models, make smarter resource
-                                decisions, and ensure compliance—without compromising performance.
-                            </p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">4.</span> Leverage AI to amplify IT impact
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                Go beyond basic automation with predictive analytics, intelligent support, threat
-                                detection, and performance optimization.
-                            </p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">5.</span> Scale with confidence
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                Build a future-ready IT foundation with robust asset management, proactive maintenance,
-                                and advanced operations control to support sustainable growth.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <!-- Right Content: Image -->
+        <div class="order-2 lg:order-2 flex justify-center lg:justify-end">
+          <div class="relative max-w-md lg:max-w-lg w-full">
+            <img src="assets/img/scale_business_it_image.png" alt="Scale business IT smarter report cover"
+              class="w-full h-auto rounded-lg">
+          </div>
         </div>
-    </section>
 
-    <!-- Statistics Section -->
-    <section class="py-16 lg:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-12">
-                <div class="space-y-6">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Did you know?</h2>
-                    <p class="text-xl text-gray-700 max-w-4xl mx-auto">
-                        The biggest outcomes seen with AI and IT modernization, based on real-world use cases:
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-                    <div class="text-center space-y-4">
-                        <div
-                            class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
-                            <span class="text-3xl font-bold text-blue-600">25%</span>
-                        </div>
-                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
-                            Improved resolution time at Village Roadshow after adopting Freshservice
-                        </p>
-                    </div>
-
-                    <div class="text-center space-y-4">
-                        <div
-                            class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
-                            <span class="text-3xl font-bold text-blue-600">60%</span>
-                        </div>
-                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
-                            Reduction in annual IT costs achieved through automation and smarter tools
-                        </p>
-                    </div>
-
-                    <div class="text-center space-y-4">
-                        <div
-                            class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
-                            <span class="text-3xl font-bold text-blue-600">36%</span>
-                        </div>
-                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
-                            Of organizations have already adopted generative AI in IT — the highest across all business
-                            functions
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <!-- Download Button: only mobile goes last -->
+        <div class="order-3 lg:order-2 flex justify-center lg:justify-start">
+          <button id="heroDownloadBtn" onclick="openModal()"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md w-full sm:w-auto">
+            Download Now
+          </button>
         </div>
-    </section>
 
-    <!-- modified by nitish according to requirement on 31-07-25 -->
-    <!-- Industry Recognition Section -->
-    <!-- <section class="py-16 bg-white">
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Content Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Image -->
+        <div class="flex justify-center lg:justify-start order-2 lg:order-1">
+          <div class="relative max-w-md lg:max-w-lg">
+            <img src="assets/img/image_whats_inside.png" alt="Person with IT automation illustration"
+              class="w-full h-auto rounded-lg">
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="space-y-6 order-1 lg:order-2">
+          <div class="space-y-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+              Learn 5 proven ways SMBs deliver top-tier employee experiences on a lean budget.
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              Small and medium businesses face immense pressure to deliver seamless, consumer-like
+              workplace experiences
+              while grappling with everyday complexities: limited IT budgets, fragmented tools, and manual
+              processes that
+              hinder scalability. This can make sustainable growth feel like an uphill battle. But what if
+              you could
+              transform your IT operations from a cost center into a strategic engine for growth, all
+              while enhancing
+              employee satisfaction and optimizing costs?
+            </p>
+            <p class="text-gray-900 font-semibold">In this guide, you will discover how to:</p>
+          </div>
+          <div class="space-y-4">
+            <div class="space-y-2">
+              <p class="font-semibold text-gray-900">
+                <span class="text-blue-600 font-bold">1.</span> Simplify IT operations
+              </p>
+              <p class="text-gray-600 ml-4">
+                Discover how intuitive, user-friendly IT platforms reduce complexity, increase adoption,
+                and boost team productivity from day one.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <p class="font-semibold text-gray-900">
+                <span class="text-blue-600 font-bold">2.</span> Automate to move faster
+              </p>
+              <p class="text-gray-600 ml-4">
+                See how no-code automation and AI-powered tools eliminate repetitive tasks, speed up
+                resolution times, and allow your IT team to focus on strategic work.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <p class="font-semibold text-gray-900">
+                <span class="text-blue-600 font-bold">3.</span> Optimize spend and resources
+              </p>
+              <p class="text-gray-600 ml-4">
+                Learn to evaluate IT solutions with flexible pricing models, make smarter resource
+                decisions, and ensure compliance—without compromising performance.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <p class="font-semibold text-gray-900">
+                <span class="text-blue-600 font-bold">4.</span> Leverage AI to amplify IT impact
+              </p>
+              <p class="text-gray-600 ml-4">
+                Go beyond basic automation with predictive analytics, intelligent support, threat
+                detection, and performance optimization.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <p class="font-semibold text-gray-900">
+                <span class="text-blue-600 font-bold">5.</span> Scale with confidence
+              </p>
+              <p class="text-gray-600 ml-4">
+                Build a future-ready IT foundation with robust asset management, proactive maintenance,
+                and advanced operations control to support sustainable growth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-12">
+        <div class="space-y-6">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Did you know?</h2>
+          <p class="text-xl text-gray-700 max-w-4xl mx-auto">
+            The biggest outcomes seen with AI and IT modernization, based on real-world use cases:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+          <div class="text-center space-y-4">
+            <div class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
+              <span class="text-3xl font-bold text-blue-600">25%</span>
+            </div>
+            <p class="text-gray-900 font-semibold max-w-xs mx-auto">
+              Improved resolution time at Village Roadshow after adopting Freshservice
+            </p>
+          </div>
+
+          <div class="text-center space-y-4">
+            <div class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
+              <span class="text-3xl font-bold text-blue-600">60%</span>
+            </div>
+            <p class="text-gray-900 font-semibold max-w-xs mx-auto">
+              Reduction in annual IT costs achieved through automation and smarter tools
+            </p>
+          </div>
+
+          <div class="text-center space-y-4">
+            <div class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
+              <span class="text-3xl font-bold text-blue-600">36%</span>
+            </div>
+            <p class="text-gray-900 font-semibold max-w-xs mx-auto">
+              Of organizations have already adopted generative AI in IT — the highest across all business
+              functions
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- modified by nitish according to requirement on 31-07-25 -->
+  <!-- Industry Recognition Section -->
+  <!-- <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center space-y-8">
                 <h3 class="text-2xl font-bold text-gray-900">Recommended by leading industry experts</h3>
@@ -248,41 +245,40 @@
         </div>
     </section> -->
 
-    <!-- Final CTA Section -->
-    <section class="py-16 lg:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-8 max-w-4xl mx-auto">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
-                    Ready to discover the keys to transforming your IT operations for maximum impact?
-                </h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Village Roadshow used Freshservice to scale its IT operations efficiently, achieving a 25%
-                    improvement in resolution time while saving on 50% of annual IT costs. Freshservice demonstrably
-                    scaled to manage over 2,000 IT tickets monthly, a significant improvement over the previous system,
-                    showcasing its ability to handle growing support needs.
-                </p>
-                <button id="bottomDownloadBtn" onclick="openModal()"
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md transform hover:scale-105">
-                    Download Now
-                </button>
-            </div>
-        </div>
-    </section>
+  <!-- Final CTA Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-8 max-w-4xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+          Ready to discover the keys to transforming your IT operations for maximum impact?
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Village Roadshow used Freshservice to scale its IT operations efficiently, achieving a 25%
+          improvement in resolution time while saving on 50% of annual IT costs. Freshservice demonstrably
+          scaled to manage over 2,000 IT tickets monthly, a significant improvement over the previous system,
+          showcasing its ability to handle growing support needs.
+        </p>
+        <button id="bottomDownloadBtn" onclick="openModal()"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md transform hover:scale-105">
+          Download Now
+        </button>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-2">
-                <p class="text-gray-300">Privacy Policy</p>
-                <p class="text-gray-400">© 2025 Tech IQ Papers, All Rights Reserved</p>
-            </div>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-2">
+        <p class="text-gray-300">Privacy Policy</p>
+        <p class="text-gray-400">© 2025 Tech IQ Papers, All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Modal Form (Based on Old Template) -->
-   <!-- Modal Form -->
-  <div id="registrationModal"
-    class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
+  <!-- Modal Form (Based on Old Template) -->
+  <!-- Modal Form -->
+  <div id="registrationModal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
     <div class="bg-white rounded-xl shadow-xl max-w-2xl w-full mx-4 overflow-y-auto max-h-[90vh] relative">
       <div class="p-8 sm:p-12">
         <h2 class="text-2xl font-semibold text-center text-gray-800 mb-8">Register Now</h2>
@@ -351,17 +347,25 @@
           </div>
 
           <!-- Terms -->
+          <!-- Terms -->
           <div class="pt-3">
             <label for="privacyConsent" class="flex items-start text-xs text-gray-700 leading-relaxed">
               <input type="checkbox" id="privacyConsent" name="privacyConsent" class="mr-2 mt-0.5">
-              By supplying my contact information, I accept the Freshworks
-              <a href="https://www.freshworks.com/terms/" target="_blank"
-                class="text-violet-600 hover:underline">Terms of Service</a>
-              and
-              <a href="https://www.freshworks.com/privacy/" target="_blank"
-                class="text-violet-600 hover:underline">Privacy Notice</a>.
+              <span>
+                By supplying my contact information, I accept the Freshworks
+                <span style="white-space: nowrap;">
+                  <a href="https://www.freshworks.com/terms/" target="_blank" class="text-violet-600 hover:underline">
+                    Terms of Service
+                  </a>
+                  and
+                  <a href="https://www.freshworks.com/privacy/" target="_blank" class="text-violet-600 hover:underline">
+                    Privacy Notice
+                  </a>.
+                </span>
+              </span>
             </label>
           </div>
+
 
           <!-- Hidden timestamp -->
           <input type="hidden" name="timestamp" id="timestamp">
@@ -510,4 +514,5 @@
     });
   </script>
 </body>
+
 </html>
